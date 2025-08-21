@@ -1,0 +1,14 @@
+//first add a new file under the same folder called storage factory
+//SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.30;
+
+import "contracts/simplestorage.sol";   //istead of this you can also copy paste the code from simplestorage
+
+contract StorageFactory{
+    SimpleStorage[] public simpleStorageArray;
+    function createSimpleStoragecontract() public {
+        SimpleStorage simpleStorage = new SimpleStorage();
+        simpleStorageArray.push(simpleStorage);
+    }
+}
